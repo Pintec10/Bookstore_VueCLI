@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="px-4">
+    <vHeader />
+    <vLibrary />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import vHeader from "./components/header.vue";
+import vLibrary from "./components/library.vue";
+import { bus } from "./main";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    vHeader,
+    vLibrary
+  },
+  data() {
+    return {
+      bookList: [],
+      searchInput: ""
+    };
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
+}
+h2 {
+  font-size: calc(10px + 1.5vw);
+}
+p,
+.input-group-text,
+.form-control {
+  font-size: calc(6px + 1vw);
+  line-height: calc(6px + 1.1vw);
+}
+button {
+  font-size: calc(5px + 0.8vw);
 }
 </style>
