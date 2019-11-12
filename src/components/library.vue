@@ -43,12 +43,12 @@ export default {
           setTimeout(() => {
             //timeout ensures correct displaying
             this.assignHeight();
-          }, 150);
+          }, 500);
           window.addEventListener("resize", () => {
             setTimeout(() => {
               //timeout ensures correct displaying
               this.assignHeight();
-            }, 150);
+            }, 500);
           });
           //-----
           bus.$on("searchInputModified", updatedSearchInput => {
@@ -56,7 +56,7 @@ export default {
             setTimeout(() => {
               //timeout ensures correct displaying
               this.assignHeight();
-            }, 150);
+            }, 250);
           });
         });
     },
