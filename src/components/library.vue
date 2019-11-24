@@ -49,6 +49,10 @@ export default {
             //second, longer timer works for really slow loading
             this.assignHeight();
           }, 2000);
+          setTimeout(() => {
+            //third, longer timer works for awfully slow loading
+            this.assignHeight();
+          }, 4000);
           window.addEventListener("resize", () => {
             setTimeout(() => {
               //timeout ensures correct displaying
