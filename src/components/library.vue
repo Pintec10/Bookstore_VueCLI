@@ -41,14 +41,19 @@ export default {
         .then(json => {
           this.bookList = json.books;
           setTimeout(() => {
-            //timeout ensures correct displaying
+            //timeout ensures correct displaying if first page load is slow
+            //first, shorter timer allows a more seamless transition on slightly slow loading
             this.assignHeight();
           }, 500);
+          setTimeout(() => {
+            //second, longer timer works for really slow loading
+            this.assignHeight();
+          }, 2000);
           window.addEventListener("resize", () => {
             setTimeout(() => {
               //timeout ensures correct displaying
               this.assignHeight();
-            }, 500);
+            }, 250);
           });
           //-----
           bus.$on("searchInputModified", updatedSearchInput => {

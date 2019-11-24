@@ -60,9 +60,7 @@ export default {
 
 .flip-card-back {
   background-color: rgb(37, 122, 29);
-  /*background-color: rgb(255, 253, 147);*/
   color: white;
-  /*color: darkslategray;*/
   transform: rotateY(180deg);
 }
 </style>
